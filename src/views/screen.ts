@@ -2,7 +2,6 @@ import Phaser from "phaser";
 import Game from "../core/game";
 
 const screen = document.querySelector<HTMLElement>(".screen") as HTMLElement;
-
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.WEBGL,
   parent: screen,
@@ -18,10 +17,6 @@ const config: Phaser.Types.Core.GameConfig = {
     arcade: {
       debug: true,
     },
-  },
-  render: {
-    // pixelArt: true,
-    // roundPixels: true,
   },
 };
 

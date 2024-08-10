@@ -1,10 +1,8 @@
 import { Scene } from "phaser";
 import tilemapJson from "../assets/tiled/first.json";
-import tilemapPNG from "../assets/tiled/tiles/tilemap_packed.png";
-import backgroundPNG from "../assets/tiled/tiles/tilemap-backgrounds_packed.png";
-import playerPNG from "../assets/spritesheet/character.png";
 import Player from "./player";
 
+const baseFileURL = "https://koenmw.github.io/image";
 export default class game extends Scene {
   private map!: Phaser.Tilemaps.Tilemap;
   private tileset: Phaser.Tilemaps.Tileset | null = null;
@@ -30,16 +28,16 @@ export default class game extends Scene {
   preload() {
     this.load.image({
       key: "tiles",
-      url: tilemapPNG,
+      url: `${baseFileURL}/tilemap_packed.png`,
     });
 
     this.load.image({
       key: "background",
-      url: backgroundPNG,
+      url: `${baseFileURL}/tilemap-backgrounds_packed.png`,
     });
     this.load.tilemapTiledJSON("dungeon", tilemapJson);
 
-    this.load.spritesheet("player", playerPNG, {
+    this.load.spritesheet("player", `${baseFileURL}/character.png`, {
       frameWidth: 24,
       frameHeight: 24,
       startFrame: 0,

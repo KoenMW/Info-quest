@@ -1,4 +1,4 @@
-import router, { getFile, Routes, setRoutes } from "vanilla-js-ts-router";
+import router, { Routes, getFile, setRoutes } from "./core/router";
 import "./style.css";
 
 const routes: Routes = {
@@ -19,4 +19,4 @@ const routes: Routes = {
 };
 
 setRoutes(routes);
-router();
+router(true);
