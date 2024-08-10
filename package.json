@@ -13,6 +13,7 @@
     "vite": "^5.3.4"
   },
   "dependencies": {
+    "phaser": "^3.80.1",
     "vanilla-js-ts-router": "^1.0.9"
   }
 }

@@ -1,0 +1,76 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "untitled.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1.5
+        },
+        "#background": {
+            "scaleInDock": 3,
+            "scaleInEditor": 4
+        },
+        "#base": {
+            "scaleInDock": 2
+        },
+        "first.json": {
+            "scale": 3,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 258.5,
+                "y": 326.66666666666663
+            }
+        },
+        "first.json#background": {
+            "scaleInDock": 3
+        },
+        "first.json#base": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 1
+        },
+        "test.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "untitled.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 202.33333333333331,
+                "y": 148.33333333333331
+            }
+        },
+        "untitled.tmx#background": {
+            "scaleInDock": 3
+        },
+        "untitled.tmx#base": {
+            "scaleInDock": 1.5
+        }
+    },
+    "last.imagePath": "C:/Users/koenw/OneDrive/Documenten/GitHub/Info-quest/assets/tiled/tiles",
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 18,
+    "map.tileWidth": 18,
+    "openFiles": [
+        "untitled.tmx",
+        "first.json"
+    ],
+    "project": "untitled.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "first.json",
+        "untitled.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 18,
+        "width": 18
+    }
+}
