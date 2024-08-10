@@ -2,14 +2,14 @@ import router, { Routes, getFile, setRoutes } from "./core/router";
 import "./style.css";
 
 const routes: Routes = {
-  "/": {
+  screen: {
     title: "screen",
     content: getFile("html/screen.html"),
     scripts: [
       () => import("./views/screen").then((module) => module.default()),
     ],
   },
-  "/controller": {
+  controller: {
     title: "controller",
     content: getFile("html/controller.html"),
     scripts: [
