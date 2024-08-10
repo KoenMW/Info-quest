@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "untitled.tmx",
+    "activeFile": "first.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -19,11 +19,11 @@
             "scaleInDock": 2
         },
         "first.json": {
-            "scale": 3,
-            "selectedLayer": 4,
+            "scale": 1.5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 258.5,
-                "y": 326.66666666666663
+                "x": 299.6666666666667,
+                "y": 362
             }
         },
         "first.json#background": {
@@ -58,7 +58,6 @@
     "map.tileHeight": 18,
     "map.tileWidth": 18,
     "openFiles": [
-        "untitled.tmx",
         "first.json"
     ],
     "project": "untitled.tiled-project",

@@ -1,4 +1,4 @@
-import router, { Routes, getFile, setRoutes } from "./core/router";
+import router, { Routes, getFile, setRoutes } from "vanilla-js-ts-router";
 import "./style.css";
 
 const routes: Routes = {
