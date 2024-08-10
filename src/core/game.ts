@@ -19,6 +19,12 @@ export default class game extends Scene {
 
   constructor() {
     super("game");
+
+    //temp
+    this.backgroundLayer;
+    this.midgroundLayer;
+    this.halfgroundLayer;
+    this.deathLayer;
   }
 
   preload() {
