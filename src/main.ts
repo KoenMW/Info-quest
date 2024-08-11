@@ -2,8 +2,6 @@ import router, { Routes, getFile, setRoutes } from "vanilla-js-ts-router";
 import "./style.css";
 import { setupTRINN } from "trinn-remote-control";
 
-await setupTRINN();
-
 const routes: Routes = {
   screen: {
     title: "screen",
@@ -21,5 +19,10 @@ const routes: Routes = {
   },
 };
 
-setRoutes(routes);
-router(true);
+const init = async () => {
+  await setupTRINN();
+  setRoutes(routes);
+  router(true);
+};
+
+init();
