@@ -1,8 +1,12 @@
 import Phaser from "phaser";
+import { inputs } from "../types";
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
   public grounded = false;
+  private left = false;
+  private right = false;
+  private jump = false;
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, "player");
@@ -38,6 +42,26 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     });
   }
 
+  public setMovement(input: inputs) {
+    switch (input) {
+      case "left_press":
+        this.left = true;
+        break;
+      case "left_release":
+        this.left = false;
+        break;
+      case "right_press":
+        this.right = true;
+        break;
+      case "right_release":
+        this.right = false;
+        break;
+      case "jump":
+        this.jump = true;
+        break;
+    }
+  }
+
   update() {
     if (!this.body || !this.cursors) return;
 
@@ -54,15 +78,16 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       this.grounded = false;
     }
 
-    if (this.cursors.left.isDown) {
+    if (this.left) {
       this.setVelocityX(-100);
-    } else if (this.cursors.right.isDown) {
+    } else if (this.right) {
       this.setVelocityX(100);
     } else {
       this.setVelocityX(0);
     }
 
-    if (this.cursors.space.isDown && this.grounded) {
+    if (this.jump && this.grounded) {
+      this.jump = false;
       this.setVelocityY(-200);
     }
   }

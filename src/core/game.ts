@@ -1,6 +1,7 @@
 import { Scene } from "phaser";
 import tilemapJson from "../assets/tiled/first.json";
 import Player from "./player";
+import Remote from "./remote";
 
 const baseFileURL = "https://koenmw.github.io/image";
 export default class game extends Scene {
@@ -13,7 +14,7 @@ export default class game extends Scene {
   private halfgroundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
   private deathLayer: Phaser.Tilemaps.TilemapLayer | null = null;
 
-  private player!: Phaser.Physics.Arcade.Sprite;
+  private player!: Player;
 
   constructor() {
     super("game");
@@ -110,6 +111,15 @@ export default class game extends Scene {
     this.cameraInit();
 
     this.collisionInit();
+
+    Remote.create(
+      "fjdsaklfjdsafkjadslkf",
+      (event) => console.log(event),
+      (input) => {
+        console.log(input);
+        this.player.setMovement(input);
+      }
+    );
   }
 
   update() {
