@@ -2,6 +2,8 @@ import { Scene } from "phaser";
 import tilemapJson from "../assets/tiled/first.json";
 import Player from "./player";
 import Remote from "./remote";
+import { setModule, setQRCode, setRestart } from "./dom";
+import { generateKey } from "./utils";
 
 const baseFileURL = "https://koenmw.github.io/image";
 export default class game extends Scene {
@@ -18,6 +20,23 @@ export default class game extends Scene {
 
   constructor() {
     super("game");
+    const key = generateKey();
+    setQRCode(key);
+
+    Remote.create(
+      key,
+      (event) => {
+        if (event === "close") {
+          setRestart();
+        } else {
+          setModule();
+          this.scene.resume();
+        }
+      },
+      (input) => {
+        this.player.setMovement(input);
+      }
+    );
 
     //temp
     this.backgroundLayer;
@@ -111,15 +130,7 @@ export default class game extends Scene {
     this.cameraInit();
 
     this.collisionInit();
-
-    Remote.create(
-      "fjdsaklfjdsafkjadslkf",
-      (event) => console.log(event),
-      (input) => {
-        console.log(input);
-        this.player.setMovement(input);
-      }
-    );
+    this.scene.pause();
   }
 
   update() {
