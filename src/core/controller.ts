@@ -1,5 +1,5 @@
 import { TRINNController } from "trinn-remote-control";
-import { inputs } from "../types";
+import { Inputs } from "../types";
 
 abstract class Controller {
   static controller: TRINNController;
@@ -32,7 +32,7 @@ abstract class Controller {
     });
   }
 
-  public static send(input: inputs) {
+  public static send(input: Inputs) {
     this.controller.sendData({
       type: "input",
       input,

@@ -1,5 +1,5 @@
 import { TRINNRemote } from "trinn-remote-control";
-import { inputs } from "../types";
+import { Inputs } from "../types";
 
 abstract class Remote {
   static remote: TRINNRemote;
@@ -9,7 +9,7 @@ abstract class Remote {
   static create(
     id: string,
     onConnectionEvent: (event: "close" | "open") => void,
-    onInputEvent: (input: inputs) => void
+    onInputEvent: (input: Inputs) => void
   ) {
     this.remote = new TRINNRemote(id);
 

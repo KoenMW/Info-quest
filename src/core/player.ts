@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import { inputs } from "../types";
+import { Inputs } from "../types";
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -42,7 +42,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     });
   }
 
-  public setMovement(input: inputs) {
+  public setMovement(input: Inputs) {
     switch (input) {
       case "left_press":
         this.left = true;
@@ -64,6 +64,12 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
 
   update() {
     if (!this.body || !this.cursors) return;
+
+    if (this.body.velocity.x > 0) {
+      this.setFlipX(true);
+    } else if (this.body.velocity.x < 0) {
+      this.setFlipX(false);
+    }
 
     if (this.body.velocity.x !== 0) {
       this.anims.play("run", true);
