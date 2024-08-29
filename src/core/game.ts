@@ -9,7 +9,7 @@ import Collactable from "./collactable";
 import data from "./data";
 
 const baseFileURL = "https://koenmw.github.io/image";
-export default class game extends Scene {
+export default class Game extends Scene {
   private map!: Phaser.Tilemaps.Tilemap;
   private tileset: Phaser.Tilemaps.Tileset | null = null;
   private backgroundTileset: Phaser.Tilemaps.Tileset | null = null;
@@ -131,6 +131,13 @@ export default class game extends Scene {
         141, 142, 143, 144,
       ]);
     }
+  }
+
+  public setPlayerCollision(
+    sprite: Phaser.Physics.Arcade.Sprite,
+    callback: () => void
+  ) {
+    this.physics.add.collider(this.player, sprite, callback);
   }
 
   create() {

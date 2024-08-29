@@ -1,7 +1,8 @@
 import { Data } from "../types";
+import Game from "./game";
 
 export default class Collactable extends Phaser.Physics.Arcade.Sprite {
-  constructor(scene: Phaser.Scene, x: number, y: number, data: Data) {
+  constructor(scene: Game, x: number, y: number, data: Data) {
     super(scene, x, y, "collectable");
     scene.add.existing(this);
     scene.physics.add.existing(this);
@@ -17,6 +18,10 @@ export default class Collactable extends Phaser.Physics.Arcade.Sprite {
     });
 
     this.anims.play("idle", true);
-    data;
+
+    scene.setPlayerCollision(this, () => {
+      console.log(`Collected ${data.name}\ndata: ${data.english}`);
+      this.destroy();
+    });
   }
 }
