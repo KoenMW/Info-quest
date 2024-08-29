@@ -34,9 +34,11 @@ export const setRestart = () => {
   let count = 10;
   time.innerText = count.toString();
   setInterval(() => {
-    time.innerText = count.toString();
     if (count <= 0) {
+      time.innerText = "restarting...";
       window.location.reload();
+    } else {
+      time.innerText = count.toString();
     }
     count--;
   }, 1000);
