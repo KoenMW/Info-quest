@@ -10,4 +10,5 @@ export type Data = {
   english: string;
   dutch: string;
   gained: boolean;
+  ec: number;
 };

@@ -1,4 +1,5 @@
 import { Data } from "../types";
+import { setData } from "./dom";
 import Game from "./game";
 
 export default class Collactable extends Phaser.Physics.Arcade.Sprite {
@@ -20,7 +21,7 @@ export default class Collactable extends Phaser.Physics.Arcade.Sprite {
     this.anims.play("idle", true);
 
     scene.setPlayerCollision(this, () => {
-      console.log(`Collected ${data.name}\ndata: ${data.english}`);
+      setData(data);
       this.destroy();
     });
   }

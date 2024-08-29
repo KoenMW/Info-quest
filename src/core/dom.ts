@@ -1,4 +1,11 @@
 import QRCode from "qrcode";
+import { Data } from "../types";
+
+const modules = document.querySelectorAll<HTMLElement>(".module");
+const time = document.querySelector<HTMLDivElement>(".time");
+const qr = document.querySelector<HTMLImageElement>(`.QR`);
+const text = document.querySelector<HTMLDivElement>(".text");
+const ec = document.querySelector<HTMLDivElement>(".ec");
 
 const stripedUrl = (url: string) => {
   const parsed = new URL(url);
@@ -8,7 +15,6 @@ const stripedUrl = (url: string) => {
 export const setQRCode = async (key: string) => {
   const url = `${stripedUrl(window.location.href)}?route=controller&key=${key}`;
   const data = await QRCode.toDataURL(url);
-  const qr = document.querySelector<HTMLImageElement>(`.QR`);
   if (!qr) return;
 
   qr.src = data;
@@ -18,8 +24,7 @@ export const setQRCode = async (key: string) => {
 };
 
 export const setModule = (name?: string) => {
-  const modals = document.querySelectorAll<HTMLElement>(".module");
-  modals.forEach((modal) => {
+  modules.forEach((modal) => {
     modal.style.display = "none";
     if (name && modal.classList.contains(name)) {
       modal.style.display = "flex";
@@ -29,7 +34,6 @@ export const setModule = (name?: string) => {
 
 export const setRestart = () => {
   setModule("connectionLost");
-  const time = document.querySelector<HTMLDivElement>(".time");
   if (!time) return;
   let count = 10;
   time.innerText = count.toString();
@@ -42,4 +46,14 @@ export const setRestart = () => {
     }
     count--;
   }, 1000);
+};
+
+export const setData = (data: Data) => {
+  setModule("data");
+  if (!text || !ec) return;
+  text.innerHTML = data.english;
+  ec.innerText = data.ec.toString();
+  setTimeout(() => {
+    setModule();
+  }, 10000);
 };

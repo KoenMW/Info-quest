@@ -8,6 +8,7 @@ const data: Data[] = [
     dutch:
       "In het eerste jaar ligt de focus op C#. Deze taal is ideaal om de basisprincipes van programmeren te begrijpen en patronen zoals MVC en Factory te verkennen. In het tweede jaar breid je je vaardigheden uit door Java en JavaScript te leren.",
     gained: false,
+    ec: 5,
   },
   {
     name: "Design",
@@ -16,6 +17,7 @@ const data: Data[] = [
     dutch:
       "Design is cruciaal in softwareontwikkeling, met de focus op user flows, interaction design, webdesign en UI. Deze elementen zorgen ervoor dat applicaties intuïtief en effectief zijn.",
     gained: false,
+    ec: 3,
   },
   {
     name: "Mathematics",
@@ -24,6 +26,7 @@ const data: Data[] = [
     dutch:
       "Wiskunde ondersteunt logisch denken en probleemoplossing, essentieel in programmeren. Je gebruikt wiskunde om algoritmen te begrijpen, code te optimaliseren en complexe problemen op te lossen.",
     gained: false,
+    ec: 4,
   },
   {
     name: "Linux",
@@ -32,6 +35,7 @@ const data: Data[] = [
     dutch:
       "Linux wordt veel gebruikt in serveromgevingen. Je werkt met de CLI om bestanden te beheren, tussen mappen te navigeren en systemen te configureren, wat je voorbereidt op rollen in serverbeheer.",
     gained: false,
+    ec: 2,
   },
   {
     name: "Professional Skills",
@@ -40,6 +44,7 @@ const data: Data[] = [
     dutch:
       "Je ontwikkelt vaardigheden voor je carrière, zoals voorbereidingen voor interviews en het opbouwen van een sterk LinkedIn-profiel. Deze vaardigheden helpen je om jezelf professioneel te presenteren.",
     gained: false,
+    ec: 1,
   },
   {
     name: "Communication",
@@ -48,6 +53,7 @@ const data: Data[] = [
     dutch:
       "Leer ideeën duidelijk te presenteren, professionele e-mails te schrijven en gestructureerde documenten op te stellen. Deze vaardigheden zijn essentieel voor samenwerking en projectmanagement.",
     gained: false,
+    ec: 2,
   },
   {
     name: "Projects",
@@ -56,6 +62,7 @@ const data: Data[] = [
     dutch:
       "Projecten laten je je vaardigheden in de praktijk brengen. Vanaf de laatste periode van het eerste jaar en gedurende het tweede jaar werk je aan projecten die teamwork en probleemoplossing vereisen.",
     gained: false,
+    ec: 3,
   },
   {
     name: "Final",
@@ -64,6 +71,7 @@ const data: Data[] = [
     dutch:
       "Gefeliciteerd! Je hebt het spel voltooid en hopelijk iets waardevols geleerd. Bedankt voor het spelen!",
     gained: false,
+    ec: 0,
   },
 ];
 
