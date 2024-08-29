@@ -1,7 +1,12 @@
 import QRCode from "qrcode";
 
+const stripedUrl = (url: string) => {
+  const parsed = new URL(url);
+  return `${parsed.origin}${parsed.pathname}`;
+};
+
 export const setQRCode = async (key: string) => {
-  const url = `${window.location.origin}/?route=controller&key=${key}`;
+  const url = `${stripedUrl(window.location.href)}?route=controller&key=${key}`;
   const data = await QRCode.toDataURL(url);
   const qr = document.querySelector<HTMLImageElement>(`.QR`);
   if (!qr) return;
