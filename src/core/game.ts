@@ -4,6 +4,9 @@ import Player from "./player";
 import Remote from "./remote";
 import { setModule, setQRCode, setRestart } from "./dom";
 import { generateKey } from "./utils";
+import collactable from "../assets/spritesheet/collactable.png";
+import Collactable from "./collactable";
+import data from "./data";
 
 const baseFileURL = "https://koenmw.github.io/image";
 export default class game extends Scene {
@@ -60,6 +63,13 @@ export default class game extends Scene {
     this.load.spritesheet("player", `${baseFileURL}/character.png`, {
       frameWidth: 24,
       frameHeight: 24,
+      startFrame: 0,
+      endFrame: 1,
+    });
+
+    this.load.spritesheet("collectable", collactable, {
+      frameWidth: 18,
+      frameHeight: 18,
       startFrame: 0,
       endFrame: 1,
     });
@@ -126,6 +136,10 @@ export default class game extends Scene {
   create() {
     this.initMap();
     this.player = new Player(this, 100, 200);
+
+    data.forEach((item, index) => {
+      new Collactable(this, 100 + index * 20, 250, item);
+    });
 
     this.cameraInit();
 

@@ -4,7 +4,7 @@ const data: Data[] = [
   {
     name: "Programming",
     english:
-      "In the first year, you’ll focus on C#. This language is ideal for understanding programming fundamentals and exploring patterns like MVC and Factory. In the second year, you’ll expand your skills by learning Java and JavaScript.",
+      "In the first year, you'll focus on C#. This language is ideal for understanding programming fundamentals and exploring patterns like MVC and Factory. In the second year, you'll expand your skills by learning Java and JavaScript.",
     dutch:
       "In het eerste jaar ligt de focus op C#. Deze taal is ideaal om de basisprincipes van programmeren te begrijpen en patronen zoals MVC en Factory te verkennen. In het tweede jaar breid je je vaardigheden uit door Java en JavaScript te leren.",
     gained: false,
@@ -20,7 +20,7 @@ const data: Data[] = [
   {
     name: "Mathematics",
     english:
-      "Mathematics supports logical thinking and problem-solving, essential in programming. You’ll use math to understand algorithms, optimize code, and solve complex problems.",
+      "Mathematics supports logical thinking and problem-solving, essential in programming. You'll use math to understand algorithms, optimize code, and solve complex problems.",
     dutch:
       "Wiskunde ondersteunt logisch denken en probleemoplossing, essentieel in programmeren. Je gebruikt wiskunde om algoritmen te begrijpen, code te optimaliseren en complexe problemen op te lossen.",
     gained: false,
@@ -28,7 +28,7 @@ const data: Data[] = [
   {
     name: "Linux",
     english:
-      "Linux is widely used in server environments. You’ll work with the CLI to manage files, navigate directories, and configure systems, preparing you for roles in server management.",
+      "Linux is widely used in server environments. You'll work with the CLI to manage files, navigate directories, and configure systems, preparing you for roles in server management.",
     dutch:
       "Linux wordt veel gebruikt in serveromgevingen. Je werkt met de CLI om bestanden te beheren, tussen mappen te navigeren en systemen te configureren, wat je voorbereidt op rollen in serverbeheer.",
     gained: false,
@@ -36,7 +36,7 @@ const data: Data[] = [
   {
     name: "Professional Skills",
     english:
-      "You’ll develop skills for your career, like preparing for interviews and building a strong LinkedIn profile. These skills help you present yourself professionally.",
+      "You'll develop skills for your career, like preparing for interviews and building a strong LinkedIn profile. These skills help you present yourself professionally.",
     dutch:
       "Je ontwikkelt vaardigheden voor je carrière, zoals voorbereidingen voor interviews en het opbouwen van een sterk LinkedIn-profiel. Deze vaardigheden helpen je om jezelf professioneel te presenteren.",
     gained: false,
@@ -52,7 +52,7 @@ const data: Data[] = [
   {
     name: "Projects",
     english:
-      "Projects let you apply your skills in practice. From the last term of the first year and through the second year, you’ll work on projects requiring teamwork and problem-solving.",
+      "Projects let you apply your skills in practice. From the last term of the first year and through the second year, you'll work on projects requiring teamwork and problem-solving.",
     dutch:
       "Projecten laten je je vaardigheden in de praktijk brengen. Vanaf de laatste periode van het eerste jaar en gedurende het tweede jaar werk je aan projecten die teamwork en probleemoplossing vereisen.",
     gained: false,
@@ -60,7 +60,7 @@ const data: Data[] = [
   {
     name: "Final",
     english:
-      "Congratulations! You’ve completed the game and hopefully learned something valuable. Thanks for playing!",
+      "Congratulations! You've completed the game and hopefully learned something valuable. Thanks for playing!",
     dutch:
       "Gefeliciteerd! Je hebt het spel voltooid en hopelijk iets waardevols geleerd. Bedankt voor het spelen!",
     gained: false,

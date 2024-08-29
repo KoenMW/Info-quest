@@ -22,7 +22,7 @@ const routes: Routes = {
 const init = async () => {
   await setupTRINN();
   setRoutes(routes);
-  router(true);
+  router(true, true);
 };
 
 init();
