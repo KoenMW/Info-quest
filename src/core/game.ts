@@ -4,11 +4,12 @@ import Player from "./player";
 import Remote from "./remote";
 import { setModule, setQRCode, setRestart } from "./dom";
 import { generateKey } from "./utils";
-import collactable from "../assets/spritesheet/collactable.png";
 import Collactable from "./collactable";
 import data from "./data";
-
-const baseFileURL = "https://koenmw.github.io/image";
+import characterSprite from "../assets/spritesheet/character.png";
+import collactableSprite from "../assets/spritesheet/collactable.png";
+import backgroundTileset from "../assets/tiled/tiles/tilemap-backgrounds_packed.png";
+import baseTileset from "../assets/tiled/tiles/tilemap_packed.png";
 export default class Game extends Scene {
   private map!: Phaser.Tilemaps.Tilemap;
   private tileset: Phaser.Tilemaps.Tileset | null = null;
@@ -51,23 +52,23 @@ export default class Game extends Scene {
   preload() {
     this.load.image({
       key: "tiles",
-      url: `${baseFileURL}/tilemap_packed.png`,
+      url: baseTileset,
     });
 
     this.load.image({
       key: "background",
-      url: `${baseFileURL}/tilemap-backgrounds_packed.png`,
+      url: backgroundTileset,
     });
     this.load.tilemapTiledJSON("dungeon", tilemapJson);
 
-    this.load.spritesheet("player", `${baseFileURL}/character.png`, {
+    this.load.spritesheet("player", characterSprite, {
       frameWidth: 24,
       frameHeight: 24,
       startFrame: 0,
       endFrame: 1,
     });
 
-    this.load.spritesheet("collectable", collactable, {
+    this.load.spritesheet("collectable", collactableSprite, {
       frameWidth: 18,
       frameHeight: 18,
       startFrame: 0,
