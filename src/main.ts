@@ -20,7 +20,7 @@ const routes: Routes = {
 };
 
 const init = async () => {
-  await setupTRINN();
+  await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
   setRoutes(routes);
   router(true, true);
 };

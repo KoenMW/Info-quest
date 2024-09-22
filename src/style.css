@@ -1,16 +1,23 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, Inter, system-ui, Avenir, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --main: #e3027f;
+  --main-hover: #b30062;
+  --black: #000000;
+  --white: #ffffff;
+  --yellow: #ffff00;
+  --gray: #00000020;
+
+  
+  color: var(--black);
+  background-color: var(--white);
 }
 
 body {
@@ -31,20 +38,21 @@ main {
 }
 
 button {
-  width: 100%;
+  width: 33vw;
   height: 100%;
   border-radius: 8px;
   border: 1px solid transparent;
+  color: var(--black);
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 3rem;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--main);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--main-hover);
 }
 
 .modal{
@@ -52,7 +60,6 @@ button:hover {
   position: absolute;
   background-color: #24242483;
   z-index: 1;
-  border-radius: 2rem;
   flex-direction: row;
 
   top: 0;
@@ -63,6 +70,16 @@ button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow);
+  color: var(--black);
+  border-radius: 2rem;
 }
 
 .module {
@@ -82,4 +99,18 @@ button:hover {
   height: 100vh;
   display: flex;
   flex-direction: row;
+
+  justify-content: space-between;
+}
+
+@media (orientation: landscape) {
+  .orientation {
+    display: none;
+  }  
+}
+
+@media (orientation: portrait) {
+  .orientation {
+    display: flex;
+  }  
 }
