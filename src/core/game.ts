@@ -2,7 +2,7 @@ import { Scene } from "phaser";
 import tilemapJson from "../assets/tiled/first.json";
 import Player from "./player";
 import Remote from "./remote";
-import { setModule, setQRCode, setRestart } from "./dom";
+import { setModule, setQRCode, setRestart, setStartScreen } from "./dom";
 import { generateKey } from "./utils";
 import Collactable from "./collactable";
 import data from "./data";
@@ -10,20 +10,39 @@ import characterSprite from "../assets/spritesheet/character.png";
 import collactableSprite from "../assets/spritesheet/collactable.png";
 import backgroundTileset from "../assets/tiled/tiles/tilemap-backgrounds_packed.png";
 import baseTileset from "../assets/tiled/tiles/tilemap_packed.png";
-export default class Game extends Scene {
-  private map!: Phaser.Tilemaps.Tilemap;
-  private tileset: Phaser.Tilemaps.Tileset | null = null;
-  private backgroundTileset: Phaser.Tilemaps.Tileset | null = null;
-  private backgroundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
-  private midgroundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
-  private groundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
-  private halfgroundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
-  private deathLayer: Phaser.Tilemaps.TilemapLayer | null = null;
+import { local } from "./const";
+import { setupTRINN } from "trinn-remote-control";
 
-  private player!: Player;
+const setKeyBoard = (player: Player) => {
+  document.addEventListener("keydown", (event) => {
+    switch (event.key) {
+      case "ArrowLeft":
+        player.setMovement("left_press");
+        break;
+      case "ArrowRight":
+        player.setMovement("right_press");
+        break;
+      case " ":
+        player.setMovement("jump");
+        break;
+    }
+  });
 
-  constructor() {
-    super("game");
+  document.addEventListener("keyup", (event) => {
+    switch (event.key) {
+      case "ArrowLeft":
+        player.setMovement("left_release");
+        break;
+      case "ArrowRight":
+        player.setMovement("right_release");
+        break;
+    }
+  });
+};
+
+const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
+  if (!local) {
+    await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
     const key = generateKey();
     setQRCode(key);
 
@@ -31,22 +50,33 @@ export default class Game extends Scene {
       key,
       (event) => {
         if (event === "close") {
+          scene.pause();
           setRestart();
         } else {
           setModule();
-          this.scene.resume();
+          scene.resume();
         }
       },
       (input) => {
-        this.player.setMovement(input);
+        player.setMovement(input);
       }
     );
+  } else {
+    setStartScreen();
+    setKeyBoard(player);
+  }
+};
 
-    //temp
-    this.backgroundLayer;
-    this.midgroundLayer;
-    this.halfgroundLayer;
-    this.deathLayer;
+class Game extends Scene {
+  private map!: Phaser.Tilemaps.Tilemap;
+  private tileset: Phaser.Tilemaps.Tileset | null = null;
+  private backgroundTileset: Phaser.Tilemaps.Tileset | null = null;
+  private groundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
+
+  private player!: Player;
+
+  constructor() {
+    super("game");
   }
 
   preload() {
@@ -90,30 +120,13 @@ export default class Game extends Scene {
     );
 
     if (!this.tileset || !this.backgroundTileset) return;
-    this.backgroundLayer = this.map.createLayer(
-      "Background Layer",
-      this.backgroundTileset,
-      0,
-      0
-    );
+    this.map.createLayer("Background Layer", this.backgroundTileset, 0, 0);
 
-    this.midgroundLayer = this.map.createLayer(
-      "Midground Layer",
-      this.tileset,
-      0,
-      0
-    );
+    this.map.createLayer("Midground Layer", this.tileset, 0, 0);
 
     this.groundLayer = this.map.createLayer("Ground Layer", this.tileset, 0, 0);
 
-    this.halfgroundLayer = this.map.createLayer(
-      "Halfground Layer",
-      this.tileset,
-      0,
-      0
-    );
-
-    this.deathLayer = this.map.createLayer("Death", this.tileset, 0, 0);
+    this.map.createLayer("Halfground Layer", this.tileset, 0, 0);
   }
 
   private cameraInit() {
@@ -141,9 +154,11 @@ export default class Game extends Scene {
     this.physics.add.collider(this.player, sprite, callback);
   }
 
-  create() {
+  async create() {
     this.initMap();
     this.player = new Player(this, 100, 200);
+
+    await setInput(this.scene, this.player);
 
     data.forEach((item, index) => {
       new Collactable(this, 100 + index * 20, 250, item);
@@ -159,3 +174,5 @@ export default class Game extends Scene {
     this.player.update();
   }
 }
+
+export default new Game();

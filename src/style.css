@@ -80,6 +80,7 @@ button:hover {
   background-color: var(--yellow);
   color: var(--black);
   border-radius: 2rem;
+  padding: 2rem;
 }
 
 .module {
@@ -113,4 +114,23 @@ button:hover {
   .orientation {
     display: flex;
   }  
+}
+
+@keyframes blink {
+  0% {
+      opacity: 1;
+  }
+  59% {
+      opacity: 1;
+  }
+  60% {
+      opacity: 0;
+  }
+  99% {
+      opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
 }

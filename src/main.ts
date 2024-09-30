@@ -1,6 +1,11 @@
-import router, { Routes, getFile, setRoutes } from "vanilla-js-ts-router";
+import router, {
+  Routes,
+  getFile,
+  getParam,
+  setRoutes,
+} from "vanilla-js-ts-router";
 import "./style.css";
-import { setupTRINN } from "trinn-remote-control";
+import { setLocal } from "./core/const";
 
 const routes: Routes = {
   screen: {
@@ -20,7 +25,7 @@ const routes: Routes = {
 };
 
 const init = async () => {
-  await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
+  setLocal(!!getParam("local"));
   setRoutes(routes);
   router(true, true);
 };
