@@ -175,4 +175,6 @@ class Game extends Scene {
   }
 }
 
-export default new Game();
+export default Game;
+
+export const game = new Game();

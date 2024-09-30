@@ -66,7 +66,7 @@ export const setData = (data: Data) => {
 
 export const setStartScreen = async () => {
   setModule("start-screen");
-  const game = (await import("../core/game")).default;
+  const game = (await import("../core/game")).game;
 
   const start = () => {
     setModule();

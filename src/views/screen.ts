@@ -1,5 +1,5 @@
 import Phaser from "phaser";
-import Game from "../core/game";
+import { game } from "../core/game";
 
 const screen = document.querySelector<HTMLElement>(".screen") as HTMLElement;
 const config: Phaser.Types.Core.GameConfig = {
@@ -11,7 +11,7 @@ const config: Phaser.Types.Core.GameConfig = {
     height: 256,
   },
   zoom: 4,
-  scene: Game,
+  scene: game,
   physics: {
     default: "arcade",
     arcade: {
