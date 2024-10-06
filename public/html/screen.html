@@ -1,34 +1,44 @@
-<main>
+<main data-lang="en">
   <section class="screen"></section>
   <div class="start module modal" style="display: flex">
     <div class="content">
+      <h1 class="title" data-translate="infoQuest">INFO QUEST!</h1>
       <img class="QR" />
-      <p class="blink">scan the qr code to start!</p>
+      <p class="blink" data-translate="scanQR">scan the qr code to start!</p>
     </div>
   </div>
   <div class="connectionLost module modal">
     <div class="content">
-      <h1>connection lost</h1>
-      <div>restarting in <span class="time"></span></div>
+      <h1 data-translate="connectionLost">connection lost</h1>
+      <div>
+        <span data-translate="restarting">restarting in</span>
+        <span class="time"></span>
+      </div>
     </div>
   </div>
   <div class="countdown module modal">
     <div class="content">
-      <h1>game is starting <span class="timer"></span></h1>
+      <h1>
+        <span data-translate="gameStarting">game is starting</span>
+        <span class="timer"></span>
+      </h1>
     </div>
   </div>
-
   <div class="module modal data">
     <div class="content">
-      <h1><span class="ec"></span>EC's collected!</h1>
-      <p class="text"></p>
+      <h1>
+        <span class="ec"></span
+        ><span data-translate="ecsCollect">EC's collected!</span>
+      </h1>
+      <p class="text" data-translate="ecsCollected"></p>
     </div>
   </div>
-
   <div class="module modal start-screen">
     <div class="content">
-      <h1 class="title">INFO QUEST!</h1>
-      <p class="sup-title blink">press any button to start!</p>
+      <h1 class="title" data-translate="infoQuest">INFO QUEST!</h1>
+      <p class="sup-title blink" data-translate="pressToStart">
+        press any button to start!
+      </p>
     </div>
   </div>
 </main>

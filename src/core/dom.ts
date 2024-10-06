@@ -1,5 +1,6 @@
 import QRCode from "qrcode";
 import { Data } from "../types";
+import { lang } from "./const";
 
 const modules = document.querySelectorAll<HTMLElement>(".module");
 const time = document.querySelector<HTMLDivElement>(".time");
@@ -26,7 +27,7 @@ export const setQRCode = async (key: string) => {
 };
 
 export const setModule = (name: string = "") => {
-  if (!modules) return;
+  if (!modules || currentModule === "connectionLost") return;
   currentModule = name;
   modules.forEach((modal) => {
     modal.style.display = "none";
@@ -36,13 +37,15 @@ export const setModule = (name: string = "") => {
   });
 };
 
+let interval: NodeJS.Timeout | null = null;
+
 export const setRestart = () => {
   if (currentModule === "connectionLost") return;
   setModule("connectionLost");
-  if (!time) return;
+  if (!time || interval) return;
   let count = 10;
   time.innerText = count.toString();
-  setInterval(() => {
+  interval = setInterval(() => {
     console.log(`count: ${count}`);
     if (count <= 0) {
       time.innerText = "restarting...";
@@ -57,7 +60,7 @@ export const setRestart = () => {
 export const setData = (data: Data) => {
   setModule("data");
   if (!text || !ec) return;
-  text.innerHTML = data.english;
+  text.innerText = data[lang];
   ec.innerText = data.ec.toString();
   setTimeout(() => {
     setModule();

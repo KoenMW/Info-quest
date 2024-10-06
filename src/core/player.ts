@@ -59,6 +59,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       case "jump":
         this.jump = true;
         break;
+      case "jump_release":
+        this.jump = false;
+        break;
     }
   }
 

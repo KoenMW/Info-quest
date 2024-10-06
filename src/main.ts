@@ -6,6 +6,7 @@ import router, {
 } from "vanilla-js-ts-router";
 import "./style.css";
 import { setLocal } from "./core/const";
+import { setTranslation } from "./core/utils";
 
 const routes: Routes = {
   screen: {
@@ -27,7 +28,14 @@ const routes: Routes = {
 const init = async () => {
   setLocal(!!getParam("local"));
   setRoutes(routes);
-  router(true, true);
+  await router(true, true);
+
+  const langParam = getParam("lang");
+  if (langParam && (langParam === "en" || langParam === "nl")) {
+    setTimeout(() => {
+      setTranslation(langParam);
+    }, 1000);
+  }
 };
 
 init();

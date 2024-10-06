@@ -1,3 +1,6 @@
+import { setLang } from "./const";
+import { translations } from "./data";
+
 const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -28,4 +31,15 @@ export const mobileCheck = function () {
     // @ts-ignore
   })(navigator.userAgent || navigator.vendor || window.opera);
   return check;
+};
+
+export const setTranslation = (lang: "nl" | "en") => {
+  document.querySelectorAll("[data-translate]").forEach((element) => {
+    const key = element.getAttribute("data-translate");
+    if (key) {
+      console.log(`setTranslation: ${key}\n${translations[lang][key]}`);
+      element.innerHTML = translations[lang][key];
+    }
+  });
+  setLang(lang);
 };

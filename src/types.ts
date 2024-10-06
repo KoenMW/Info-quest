@@ -3,12 +3,17 @@ export type Inputs =
   | "left_release"
   | "right_press"
   | "right_release"
-  | "jump";
+  | "jump"
+  | "jump_release";
 
 export type Data = {
   name: string;
-  english: string;
-  dutch: string;
+  en: string;
+  nl: string;
   gained: boolean;
   ec: number;
 };
+
+export type Lang = "en" | "nl";
+
+export type Translations = Record<Lang, Record<string, string>>;

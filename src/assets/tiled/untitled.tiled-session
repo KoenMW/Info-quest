@@ -19,11 +19,11 @@
             "scaleInDock": 2
         },
         "first.json": {
-            "scale": 1.5,
-            "selectedLayer": 2,
+            "scale": 2,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 299.6666666666667,
-                "y": 362
+                "x": 34,
+                "y": 196.5
             }
         },
         "first.json#background": {

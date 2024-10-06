@@ -1,5 +1,5 @@
 import { TRINNController } from "trinn-remote-control";
-import { Inputs } from "../types";
+import { Inputs, Lang } from "../types";
 
 abstract class Controller {
   static controller: TRINNController;
@@ -36,6 +36,13 @@ abstract class Controller {
     this.controller.sendData({
       type: "input",
       input,
+    });
+  }
+
+  public static sendLang(lang: Lang) {
+    this.controller.sendData({
+      type: "lang",
+      lang,
     });
   }
 }

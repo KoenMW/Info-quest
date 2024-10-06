@@ -2,6 +2,8 @@ import { getParam } from "vanilla-js-ts-router";
 import controller from "../core/controller";
 import { setupTRINN } from "trinn-remote-control";
 import { mobileCheck } from "../core/utils";
+import { setModule } from "../core/dom";
+import "./controller.css";
 
 const leftButton = document.querySelector<HTMLButtonElement>(".left");
 const rightButton = document.querySelector<HTMLButtonElement>(".right");
@@ -64,6 +66,20 @@ const setJumpButton = (button: HTMLButtonElement | null) => {
   }
 };
 
+const setLanguegeSelect = () => {
+  const languageButtons =
+    document.querySelectorAll<HTMLButtonElement>(".lang button");
+  languageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const lang = button.dataset.lang;
+      if (lang && (lang === "en" || lang === "nl")) {
+        setModule();
+        controller.sendLang(lang);
+      }
+    });
+  });
+};
+
 const controllerView = async () => {
   await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
   const key = getParam("key");
@@ -76,8 +92,11 @@ const controllerView = async () => {
 
   setMoveButton(leftButton, "left");
   setMoveButton(rightButton, "right");
+  setLanguegeSelect();
 
   setJumpButton(jumpButton);
+
+  setModule("lang");
 };
 
 export default controllerView;

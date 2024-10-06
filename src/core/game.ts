@@ -36,6 +36,9 @@ const setKeyBoard = (player: Player) => {
       case "ArrowRight":
         player.setMovement("right_release");
         break;
+      case " ":
+        player.setMovement("jump_release");
+        break;
     }
   });
 };

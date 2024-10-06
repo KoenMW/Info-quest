@@ -70,6 +70,7 @@ button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  backdrop-filter: blur(1rem);
 }
 
 .content {
@@ -79,7 +80,6 @@ button:hover {
   justify-content: center;
   background-color: var(--yellow);
   color: var(--black);
-  border-radius: 2rem;
   padding: 2rem;
 }
 
@@ -133,4 +133,22 @@ button:hover {
 
 .blink {
   animation: blink 1s infinite;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.language-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.lang {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
 }
