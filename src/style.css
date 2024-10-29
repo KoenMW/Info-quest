@@ -15,7 +15,6 @@
   --yellow: #ffff00;
   --gray: #00000020;
 
-  
   color: var(--black);
   background-color: var(--white);
 }
@@ -55,8 +54,8 @@ button:hover {
   border-color: var(--main-hover);
 }
 
-.modal{
-  content: '';
+.modal {
+  content: "";
   position: absolute;
   background-color: #24242483;
   z-index: 1;
@@ -95,7 +94,7 @@ button:hover {
   justify-content: center;
 }
 
-.controller{
+.controller {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -107,27 +106,27 @@ button:hover {
 @media (orientation: landscape) {
   .orientation {
     display: none;
-  }  
+  }
 }
 
 @media (orientation: portrait) {
   .orientation {
     display: flex;
-  }  
+  }
 }
 
 @keyframes blink {
   0% {
-      opacity: 1;
+    opacity: 1;
   }
   59% {
-      opacity: 1;
+    opacity: 1;
   }
   60% {
-      opacity: 0;
+    opacity: 0;
   }
   99% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -145,6 +144,12 @@ img {
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
+}
+
+@media (orientation: portrait) {
+  .language-select {
+    flex-direction: column;
+  }
 }
 
 .lang {
