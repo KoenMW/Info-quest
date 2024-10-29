@@ -1,0 +1,1 @@
+import{P as e,g as a}from"./game-DgkeHwaK.js";import"./dom-Dprw2NPa.js";import"./index-Du4RAbjb.js";const t=document.querySelector(".screen"),c={type:e.WEBGL,parent:t,scale:{mode:e.Scale.FIT,width:512,height:256},zoom:4,scene:a,physics:{default:"arcade",arcade:{debug:!0}}},n=()=>{new e.Game(c)};export{n as default};
