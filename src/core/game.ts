@@ -1,5 +1,5 @@
 import { Scene } from "phaser";
-import tilemapJson from "../assets/tiled/first.json";
+import tilemapJson from "../assets/tiled/map.json";
 import Player from "./player";
 import Remote from "./remote";
 import { setModule, setQRCode, setRestart, setStartScreen } from "./dom";
@@ -123,13 +123,13 @@ class Game extends Scene {
     );
 
     if (!this.tileset || !this.backgroundTileset) return;
-    this.map.createLayer("Background Layer", this.backgroundTileset, 0, 0);
+    this.map.createLayer("background", this.backgroundTileset, 0, 0);
 
-    this.map.createLayer("Midground Layer", this.tileset, 0, 0);
+    this.map.createLayer("midground", this.tileset, 0, 0);
 
-    this.groundLayer = this.map.createLayer("Ground Layer", this.tileset, 0, 0);
+    this.groundLayer = this.map.createLayer("ground", this.tileset, 0, 0);
 
-    this.map.createLayer("Halfground Layer", this.tileset, 0, 0);
+    this.map.createLayer("door", this.tileset, 0, 0);
   }
 
   private cameraInit() {
@@ -142,11 +142,7 @@ class Game extends Scene {
   private collisionInit() {
     if (this.groundLayer) {
       this.physics.add.collider(this.player, this.groundLayer);
-      this.groundLayer.setCollision([
-        0, 1, 2, 3, 4, 5, 20, 21, 22, 23, 24, 25, 40, 41, 42, 43, 60, 61, 62,
-        63, 80, 81, 82, 83, 100, 101, 102, 103, 120, 121, 122, 123, 124, 140,
-        141, 142, 143, 144,
-      ]);
+      this.groundLayer.setCollisionBetween(0, 1000);
     }
   }
 

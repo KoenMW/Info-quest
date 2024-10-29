@@ -3,13 +3,14 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "first.json",
+    "activeFile": "",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 1.5
+            "scaleInDock": 1,
+            "scaleInEditor": 1
         },
         "#background": {
             "scaleInDock": 3,
@@ -20,10 +21,10 @@
         },
         "first.json": {
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 34,
-                "y": 196.5
+                "x": 262.25,
+                "y": 211.75
             }
         },
         "first.json#background": {
@@ -31,8 +32,22 @@
         },
         "first.json#base": {
             "dynamicWrapping": false,
-            "scaleInDock": 1.5,
+            "scaleInDock": 0.33,
             "scaleInEditor": 1
+        },
+        "map.json": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 681,
+                "y": 2297
+            }
+        },
+        "map.json#background": {
+            "scaleInDock": 1
+        },
+        "map.json#base": {
+            "scaleInDock": 1
         },
         "test.tsx": {
             "scaleInDock": 1,
@@ -43,7 +58,7 @@
             "selectedLayer": 2,
             "viewCenter": {
                 "x": 202.33333333333331,
-                "y": 148.33333333333331
+                "y": 147.99999999999994
             }
         },
         "untitled.tmx#background": {
@@ -53,20 +68,24 @@
             "scaleInDock": 1.5
         }
     },
+    "last.externalTilesetPath": "C:/Users/koenw/OneDrive/Documenten/GitHub/Info-quest/src/assets/tiled",
     "last.imagePath": "C:/Users/koenw/OneDrive/Documenten/GitHub/Info-quest/assets/tiled/tiles",
+    "map.height": 120,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 18,
     "map.tileWidth": 18,
+    "map.width": 120,
     "openFiles": [
-        "first.json"
     ],
     "project": "untitled.tiled-project",
     "property.type": "bool",
     "recentFiles": [
         "first.json",
+        "map.json",
         "untitled.tmx"
     ],
     "tileset.embedInMap": true,
+    "tileset.lastUsedFilter": "JSON tileset files (*.tsj *.json)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
         "height": 18,
