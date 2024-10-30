@@ -2,6 +2,7 @@ import router, {
   Routes,
   getFile,
   getParam,
+  goTo,
   setRoutes,
 } from "vanilla-js-ts-router";
 import "./style.css";
@@ -22,6 +23,10 @@ const routes: Routes = {
     scripts: [
       () => import("./views/controller").then((module) => module.default()),
     ],
+  },
+  "/": {
+    title: "redirect",
+    scripts: [() => goTo("screen")],
   },
 };
 

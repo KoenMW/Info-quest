@@ -21,6 +21,6 @@
     "phaser": "^3.80.1",
     "qrcode": "^1.5.4",
     "trinn-remote-control": "^1.15.0",
-    "vanilla-js-ts-router": "^1.1.9"
+    "vanilla-js-ts-router": "^1.2.0"
   }
 }

@@ -1,69 +1,86 @@
-import { Data, Translations } from "../types";
+import { Data, Location, Translations } from "../types";
 
 const data: Data[] = [
   {
-    name: "Programming",
-    en: "In the first year, you'll focus on C#. This language is ideal for understanding programming fundamentals and exploring patterns like MVC and Factory. In the second year, you'll expand your skills by learning Java and JavaScript.",
-    nl: "In het eerste jaar ligt de focus op C#. Deze taal is ideaal om de basisprincipes van programmeren te begrijpen en patronen zoals MVC en Factory te verkennen. In het tweede jaar breid je je vaardigheden uit door Java en JavaScript te leren.",
+    nameEN: "Year 1 - Period 1 & 2",
+    nameNL: "Jaar 1 - Periode 1 & 2",
+    en: "You've learned the fundamentals of programming, design, and systems. This is your first step towards building cool apps and games.",
+    nl: "Je hebt de fundamenten van programmeren, design en systemen geleerd. Dit is jouw eerste stap naar het bouwen van coole apps en games.",
     gained: false,
-    ec: 5,
+    ec: 30,
   },
   {
-    name: "Design",
-    en: "Design is key in software development, focusing on user flows, interaction design, web design, and UI. These elements ensure applications are intuitive and effective.",
-    nl: "Design is cruciaal in softwareontwikkeling, met de focus op user flows, interaction design, webdesign en UI. Deze elementen zorgen ervoor dat applicaties intuïtief en effectief zijn.",
+    nameEN: "Year 1 - Period 3 & 4",
+    nameNL: "Jaar 1 - Periode 3 & 4",
+    en: "Propaedeutic diploma completed! Youve worked on hands-on projects that help you put theory into practice. You've also been introduced to Agile working.",
+    nl: "Propedeuse is binnen! Je hebt gewerkt aan praktijkgerichte projecten die je helpen de theorie in de praktijk te brengen. Ook heb je kennis gemaakt met Agile werken.",
     gained: false,
-    ec: 3,
+    ec: 30,
   },
   {
-    name: "Mathematics",
-    en: "Mathematics supports logical thinking and problem-solving, essential in programming. You'll use math to understand algorithms, optimize code, and solve complex problems.",
-    nl: "Wiskunde ondersteunt logisch denken en probleemoplossing, essentieel in programmeren. Je gebruikt wiskunde om algoritmen te begrijpen, code te optimaliseren en complexe problemen op te lossen.",
+    nameEN: "Year 2 - Period 1 & 2",
+    nameNL: "Jaar 2 - Periode 1 & 2",
+    en: "You have delved into the theory and, among other things, discovered how to use data to make smart decisions and create apps.",
+    nl: "Je hebt je verdiept in de theorie en o.a. ontdekt hoe je gegevens kunt gebruiken om slimme beslissingen en apps te maken.",
     gained: false,
-    ec: 4,
+    ec: 30,
   },
   {
-    name: "Linux",
-    en: "Linux is widely used in server environments. You'll work with the CLI to manage files, navigate directories, and configure systems, preparing you for roles in server management.",
-    nl: "Linux wordt veel gebruikt in serveromgevingen. Je werkt met de CLI om bestanden te beheren, tussen mappen te navigeren en systemen te configureren, wat je voorbereidt op rollen in serverbeheer.",
+    nameEN: "Year 2 - Period 3 & 4",
+    nameNL: "Jaar 2 - Periode 3 & 4",
+    en: "You've explored advanced programming techniques and new technologies. You've also developed further professionally so you're ready for your internship.",
+    nl: "Je hebt geavanceerde programmeertechnieken en nieuwe technologieën verkend. Ook op professioneel vlak heb je je verder ontwikkeld zodat je klaar bent om op stage te gaan.",
     gained: false,
-    ec: 2,
+    ec: 30,
   },
   {
-    name: "Professional Skills",
-    en: "You'll develop skills for your career, like preparing for interviews and building a strong LinkedIn profile. These skills help you present yourself professionally.",
-    nl: "Je ontwikkelt vaardigheden voor je carrière, zoals voorbereidingen voor interviews en het opbouwen van een sterk LinkedIn-profiel. Deze vaardigheden helpen je om jezelf professioneel te presenteren.",
+    nameEN: "Year 3 - Internship",
+    nameNL: "Jaar 3 - Stage",
+    en: "You've completed your internship at an IT company or organization in the Netherlands or abroad and applied your skills in the real world. You've built valuable connections and gained experience!",
+    nl: "Je hebt je stage bij een IT-bedrijf of organisatie in binnen- of buitenland volbracht en je vaardigheden toegepast in de echte wereld. Hierbij heb je waardevolle connecties opgebouwd en ervaring opgedaan!",
     gained: false,
-    ec: 1,
+    ec: 30,
   },
   {
-    name: "Communication",
-    en: "Learn to present ideas clearly, write professional emails, and draft structured documents. These skills are essential for collaboration and project management.",
-    nl: "Leer ideeën duidelijk te presenteren, professionele e-mails te schrijven en gestructureerde documenten op te stellen. Deze vaardigheden zijn essentieel voor samenwerking en projectmanagement.",
+    nameEN: "Year 3 - Minor 1",
+    nameNL: "Jaar 3 - Minor 1",
+    en: "You've chosen your own path! At the university, you could choose between the Data & AI or Cyber Security minor. You could also choose a minor at another university or abroad. Have you discovered where your passion lies?",
+    nl: "Je hebt je eigen pad gekozen! Bij de opleiding kon je kiezen uit de minor Data & AI of Cyber Security. Maar ook was het mogelijk om een minor bij een andere opleiding, hogeschool of in het buitenland te kiezen. Heb jij ontdekt waar jouw passie ligt?",
     gained: false,
-    ec: 2,
+    ec: 30,
   },
   {
-    name: "Projects",
-    en: "Projects let you apply your skills in practice. From the last term of the first year and through the second year, you'll work on projects requiring teamwork and problem-solving.",
-    nl: "Projecten laten je je vaardigheden in de praktijk brengen. Vanaf de laatste periode van het eerste jaar en gedurende het tweede jaar werk je aan projecten die teamwork en probleemoplossing vereisen.",
+    nameEN: "Year 4 - Minor 2",
+    nameNL: "Jaar 4 - Minor 2",
+    en: "You've specialized or broadened your knowledge even more! At InHolland, you could choose between the Cloud Computing or UX/Frontend Development minor. You could also choose a minor at another university or abroad. Time to graduate! (maximum 1 of the 2 minor periods)",
+    nl: "Je hebt je nog meer gespecialiseerd of verbreed! Bij de opleiding kon je kiezen uit de minor Cloud Computing of UX/Frontend Development. En ook nu was het mogelijk* om een minor bij een andere opleiding, hogeschool of in het buitenland te kiezen. Afstuderen maar! (maximaal 1 van de 2 minorperiodes)",
     gained: false,
-    ec: 3,
+    ec: 30,
   },
   {
-    name: "Final",
-    en: "Congratulations! You've completed the game and hopefully learned something valuable. Thanks for playing!",
-    nl: "Gefeliciteerd! Je hebt het spel voltooid en hopelijk iets waardevols geleerd. Bedankt voor het spelen!",
+    nameEN: "Year 4 - Graduation",
+    nameNL: "Jaar 4 - Afstuderen",
+    en: "The last half year you've completed your graduation internship at a company or organization, in the Netherlands or abroad. After writing, submitting, and defending your thesis, you've collected all 240 EC and have your diploma in the pocket! You can call yourself a bachelor in Science and are ready for a follow-up study or a successful career in IT.",
+    nl: "Het laatste half jaar heb je bij een bedrijf of organisatie, in binnen- of buitenland je afstudeerstage volbracht. Na het schrijven, inleveren en verdedigen van je scriptie heb je alle 240 EC verzameld en is je diploma in te pocket! Je mag jezelf bachelor in Science noemen en bent klaar voor een vervolgstudie of een succesvolle carrière in de IT.",
     gained: false,
-    ec: 0,
+    ec: 30,
   },
+];
+
+export const dataLocations: Location[] = [
+  { x: 1300, y: 2000 },
+  { x: 1320, y: 2000 },
+  { x: 1340, y: 2000 },
+  { x: 1360, y: 2000 },
+  { x: 1380, y: 2000 },
+  { x: 1400, y: 2000 },
+  { x: 1420, y: 2000 },
+  { x: 1440, y: 2000 },
 ];
 
 export const getGainedCount = () => {
   return data.filter((item) => item.gained).length;
 };
-
-export default data;
 
 export const translations: Translations = {
   en: {
@@ -93,3 +110,5 @@ export const translations: Translations = {
       "om dit spel te spelen, draai je apparaat naar de landschapsmodus",
   },
 };
+
+export default data;

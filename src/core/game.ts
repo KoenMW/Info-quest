@@ -5,7 +5,7 @@ import Remote from "./remote";
 import { setModule, setQRCode, setRestart, setStartScreen } from "./dom";
 import { generateKey } from "./utils";
 import Collactable from "./collactable";
-import data from "./data";
+import data, { dataLocations } from "./data";
 import characterSprite from "../assets/spritesheet/character.png";
 import collactableSprite from "../assets/spritesheet/collactable.png";
 import backgroundTileset from "../assets/tiled/tiles/tilemap-backgrounds_packed.png";
@@ -155,12 +155,12 @@ class Game extends Scene {
 
   async create() {
     this.initMap();
-    this.player = new Player(this, 100, 200);
+    this.player = new Player(this, 1300, 2000);
 
     await setInput(this.scene, this.player);
 
-    data.forEach((item, index) => {
-      new Collactable(this, 100 + index * 20, 250, item);
+    data.forEach((_value, index) => {
+      new Collactable(this, dataLocations[index]);
     });
 
     this.cameraInit();

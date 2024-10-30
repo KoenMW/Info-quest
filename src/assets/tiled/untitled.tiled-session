@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "map.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -36,11 +36,11 @@
             "scaleInEditor": 1
         },
         "map.json": {
-            "scale": 0.5,
+            "scale": 4,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 681,
-                "y": 2297
+                "x": 893.375,
+                "y": 1975.25
             }
         },
         "map.json#background": {
@@ -76,12 +76,13 @@
     "map.tileWidth": 18,
     "map.width": 120,
     "openFiles": [
+        "map.json"
     ],
     "project": "untitled.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "first.json",
         "map.json",
+        "first.json",
         "untitled.tmx"
     ],
     "tileset.embedInMap": true,

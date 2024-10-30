@@ -7,7 +7,8 @@ export type Inputs =
   | "jump_release";
 
 export type Data = {
-  name: string;
+  nameNL: string;
+  nameEN: string;
   en: string;
   nl: string;
   gained: boolean;
@@ -17,3 +18,8 @@ export type Data = {
 export type Lang = "en" | "nl";
 
 export type Translations = Record<Lang, Record<string, string>>;
+
+export type Location = {
+  x: number;
+  y: number;
+};
