@@ -7,6 +7,7 @@ const time = document.querySelector<HTMLDivElement>(".time");
 const qr = document.querySelector<HTMLImageElement>(`.QR`);
 const text = document.querySelector<HTMLDivElement>(".text");
 const ec = document.querySelector<HTMLDivElement>(".ec");
+const clearDataSpan = document.querySelector<HTMLSpanElement>(".clear-data");
 
 let currentModule: string = "";
 
@@ -57,14 +58,27 @@ export const setRestart = () => {
   }, 1000);
 };
 
+let allowClearData = false;
+
 export const setData = (data: Data) => {
-  setModule("data");
-  if (!text || !ec) return;
+  if (!text || !ec || !clearDataSpan) return;
+  allowClearData = false;
   text.innerText = data[lang];
   ec.innerText = data.ec.toString();
+  setModule("data");
+
+  clearDataSpan.classList.add("play");
   setTimeout(() => {
-    setModule();
+    allowClearData = true;
   }, 10000);
+};
+
+export const clearData = () => {
+  if (!allowClearData || !clearDataSpan) return;
+  console.log("clear data");
+  clearDataSpan.classList.remove("play");
+  allowClearData = false;
+  setModule();
 };
 
 export const setStartScreen = async () => {

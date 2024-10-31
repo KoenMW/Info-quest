@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { game } from "../core/game";
+import "./screen.css";
 
 const screen = document.querySelector<HTMLElement>(".screen") as HTMLElement;
 const config: Phaser.Types.Core.GameConfig = {

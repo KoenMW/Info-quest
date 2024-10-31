@@ -1,6 +1,7 @@
 import { TRINNRemote } from "trinn-remote-control";
 import { Inputs } from "../types";
 import { setTranslation } from "./utils";
+import { clearData } from "./dom";
 
 abstract class Remote {
   static remote: TRINNRemote;
@@ -33,8 +34,9 @@ abstract class Remote {
 
     this.remote.onData((data) => {
       if (data === "close") return onConnectionEvent("close");
-      if (data !== "close" || data !== "open" || data.type !== "ack") {
-        console.log("should clear modal");
+      if (data.type !== "ack") {
+        console.log("DATA", data);
+        clearData();
       }
       if (data.type === "lang") {
         setTranslation(data.lang);
