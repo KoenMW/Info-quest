@@ -2,7 +2,13 @@ import { Scene } from "phaser";
 import tilemapJson from "../assets/tiled/map.json";
 import Player from "./player";
 import Remote from "./remote";
-import { setModule, setQRCode, setRestart, setStartScreen } from "./dom";
+import {
+  playGameTimer,
+  setModule,
+  setQRCode,
+  setRestart,
+  setStartScreen,
+} from "./dom";
 import { generateKey } from "./utils";
 import Collactable from "./collactable";
 import data, { dataLocations } from "./data";
@@ -57,6 +63,7 @@ const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
           setRestart();
         } else {
           setModule();
+          playGameTimer();
           scene.resume();
         }
       },

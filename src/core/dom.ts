@@ -1,6 +1,7 @@
 import QRCode from "qrcode";
 import { Data } from "../types";
 import { lang } from "./const";
+import { formatTime } from "./utils";
 
 const modules = document.querySelectorAll<HTMLElement>(".module");
 const time = document.querySelector<HTMLDivElement>(".time");
@@ -68,6 +69,7 @@ export const setData = (data: Data) => {
   setModule("data");
 
   clearDataSpan.classList.add("play");
+  gameTimerInterval && clearInterval(gameTimerInterval);
   setTimeout(() => {
     allowClearData = true;
   }, 10000);
@@ -78,6 +80,7 @@ export const clearData = () => {
   console.log("clear data");
   clearDataSpan.classList.remove("play");
   allowClearData = false;
+  playGameTimer();
   setModule();
 };
 
@@ -92,4 +95,21 @@ export const setStartScreen = async () => {
   };
 
   document.addEventListener("keydown", start);
+};
+
+const gameTimer = document.querySelector<HTMLDivElement>(".game-timer");
+let seconds = 0;
+let gameTimerInterval: NodeJS.Timeout | null = null;
+export const playGameTimer = () => {
+  if (!gameTimer) return;
+  gameTimerInterval = setInterval(() => {
+    seconds++;
+    gameTimer.innerText = formatTime(seconds);
+  }, 1000);
+};
+
+const ecCounter = document.querySelector<HTMLDivElement>(".ec-counter");
+export const setCollected = (ec: number) => {
+  if (!ecCounter) return;
+  ecCounter.innerText = ec.toString();
 };

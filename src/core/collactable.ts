@@ -1,6 +1,6 @@
 import { Location } from "../types";
 import data from "./data";
-import { setData } from "./dom";
+import { setCollected, setData } from "./dom";
 import Game from "./game";
 
 export default class Collactable extends Phaser.Physics.Arcade.Sprite {
@@ -28,6 +28,7 @@ export default class Collactable extends Phaser.Physics.Arcade.Sprite {
     scene.setPlayerCollision(this, () => {
       setData(data[Collactable.collected]);
       Collactable.collected++;
+      setCollected(Collactable.collected * 30);
       this.destroy();
     });
   }
