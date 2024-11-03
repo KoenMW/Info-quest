@@ -1,4 +1,5 @@
 import { Location } from "../types";
+import { bounds } from "./const";
 import data from "./data";
 import { setCollected, setData } from "./dom";
 import Game from "./game";
@@ -7,7 +8,12 @@ export default class Collactable extends Phaser.Physics.Arcade.Sprite {
   public static collected: number = 0;
 
   constructor(scene: Game, location: Location) {
-    super(scene, location.x, location.y, "collectable");
+    super(
+      scene,
+      location.x * bounds.tileSize,
+      location.y * bounds.tileSize,
+      "collectable"
+    );
     scene.add.existing(this);
     scene.physics.add.existing(this);
 

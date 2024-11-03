@@ -135,8 +135,6 @@ class Game extends Scene {
     this.map.createLayer("midground", this.tileset, 0, 0);
 
     this.groundLayer = this.map.createLayer("ground", this.tileset, 0, 0);
-
-    this.map.createLayer("door", this.tileset, 0, 0);
   }
 
   private cameraInit() {

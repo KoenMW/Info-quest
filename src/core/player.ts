@@ -1,5 +1,6 @@
 import Phaser from "phaser";
-import { Inputs } from "../types";
+import { Inputs, Location } from "../types";
+import { bounds } from "./const";
 
 export default class Player extends Phaser.Physics.Arcade.Sprite {
   private cursors!: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -7,11 +8,13 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
   private left = false;
   private right = false;
   private jump = false;
+  private origin: Location = { x: 0, y: 0 };
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
     super(scene, x, y, "player");
     scene.add.existing(this);
     scene.physics.add.existing(this);
+    this.origin = { x, y };
 
     this.setGravityY(200);
 
@@ -65,6 +68,11 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     }
   }
 
+  private resetPosition() {
+    this.x = this.origin.x;
+    this.y = this.origin.y;
+  }
+
   update() {
     if (!this.body || !this.cursors) return;
 
@@ -99,5 +107,13 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       this.jump = false;
       this.setVelocityY(-200);
     }
+
+    if (
+      this.body.position.y > bounds.tileSize * bounds.mapSize ||
+      this.body.position.y < 0 ||
+      this.body.position.x < 0 ||
+      this.body.position.x > bounds.tileSize * bounds.mapSize
+    )
+      this.resetPosition();
   }
 }
