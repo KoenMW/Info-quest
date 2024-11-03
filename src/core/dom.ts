@@ -60,6 +60,7 @@ export const setRestart = () => {
 };
 
 let allowClearData = false;
+export let viewingData = false;
 
 export const setData = (data: Data) => {
   if (!text || !ec || !clearDataSpan) return;
@@ -67,6 +68,7 @@ export const setData = (data: Data) => {
   text.innerText = data[lang];
   ec.innerText = data.ec.toString();
   setModule("data");
+  viewingData = true;
 
   clearDataSpan.classList.add("play");
   gameTimerInterval && clearInterval(gameTimerInterval);
@@ -80,6 +82,7 @@ export const clearData = () => {
   console.log("clear data");
   clearDataSpan.classList.remove("play");
   allowClearData = false;
+  viewingData = false;
   playGameTimer();
   setModule();
 };
