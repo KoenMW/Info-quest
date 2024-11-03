@@ -19,7 +19,9 @@ const stripedUrl = (url: string) => {
 
 export const setQRCode = async (key: string) => {
   const url = `${stripedUrl(window.location.href)}?route=controller&key=${key}`;
-  const data = await QRCode.toDataURL(url);
+  const data = await QRCode.toDataURL(url, {
+    scale: 10,
+  });
   if (!qr) return;
 
   qr.src = data;
