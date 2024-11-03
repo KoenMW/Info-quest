@@ -56,3 +56,17 @@
   opacity: 0;
   animation: appear 10000ms forwards;
 }
+
+header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.start-content {
+  max-width: 30dvw;
+}
+
+.title {
+  color: var(--main);
+}

@@ -51,6 +51,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
       this.left = false;
       this.right = false;
       this.jump = false;
+      return;
     }
     switch (input) {
       case "left_press":
