@@ -64,9 +64,18 @@ header {
 }
 
 .start-content {
-  max-width: 30dvw;
+  max-width: 25dvw;
 }
 
 .title {
   color: var(--main);
+}
+
+header {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  color: var(--main);
+  font-weight: bold;
+  font-size: 2em;
 }
