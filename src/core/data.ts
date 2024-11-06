@@ -95,6 +95,8 @@ export const translations: Translations = {
     orientationH1: "Please rotate your device",
     orientationP:
       "to play this game, please rotate your device to landscape mode",
+    finish: "Congratulations! You've collected all EC's!",
+    "finish-p": "thanks for playing, I hope you learned something!",
   },
   nl: {
     scanQR: "scan de qr-code om te starten!",
@@ -108,6 +110,8 @@ export const translations: Translations = {
     orientationH1: "Draai je apparaat",
     orientationP:
       "om dit spel te spelen, draai je apparaat naar de landschapsmodus",
+    finish: "Gefeliciteerd! Je hebt alle EC's verzameld!",
+    "finish-p": "bedankt voor het spelen, ik hoop dat je iets hebt geleerd!",
   },
 };
 
