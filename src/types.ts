@@ -11,7 +11,6 @@ export type Data = {
   nameEN: string;
   en: string;
   nl: string;
-  gained: boolean;
   ec: number;
 };
 

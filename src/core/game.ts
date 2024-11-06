@@ -14,10 +14,12 @@ import Collactable from "./collactable";
 import data, { dataLocations } from "./data";
 import characterSprite from "../assets/spritesheet/character.png";
 import collactableSprite from "../assets/spritesheet/collactable.png";
+import collactableHiddenSprite from "../assets/spritesheet/collactable_hidden.png";
 import backgroundTileset from "../assets/tiled/tiles/tilemap-backgrounds_packed.png";
 import baseTileset from "../assets/tiled/tiles/tilemap_packed.png";
 import { local } from "./const";
 import { setupTRINN } from "trinn-remote-control";
+import CollactableHidden from "./collactable_hidden";
 
 const setKeyBoard = (player: Player) => {
   document.addEventListener("keydown", (event) => {
@@ -114,6 +116,13 @@ class Game extends Scene {
       startFrame: 0,
       endFrame: 1,
     });
+
+    this.load.spritesheet("collactable_hidden", collactableHiddenSprite, {
+      frameWidth: 18,
+      frameHeight: 18,
+      startFrame: 0,
+      endFrame: 1,
+    });
   }
 
   private initMap() {
@@ -167,6 +176,8 @@ class Game extends Scene {
     data.forEach((_value, index) => {
       new Collactable(this, dataLocations[index]);
     });
+
+    new CollactableHidden(this);
 
     this.cameraInit();
 

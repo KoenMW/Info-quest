@@ -15,7 +15,7 @@
   --yellow: #ffff00;
   --gray: #00000020;
 
-  color: var(--black);
+  color: var(--white);
   background-color: var(--white);
 }
 
@@ -78,8 +78,8 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--yellow);
-  color: var(--black);
+  background-color: var(--main);
+  color: var(--white);
   padding: 2rem;
 }
 
@@ -154,6 +154,7 @@ img {
 }
 
 .lang {
+  color: var(--white);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
