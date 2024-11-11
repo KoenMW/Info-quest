@@ -22,6 +22,7 @@ const data: Data[] = [
     nl: "Je hebt je verdiept in de theorie en o.a. ontdekt hoe je gegevens kunt gebruiken om slimme beslissingen en apps te maken.",
     ec: 30,
   },
+
   {
     nameEN: "Year 2 - Period 3 & 4",
     nameNL: "Jaar 2 - Periode 3 & 4",
