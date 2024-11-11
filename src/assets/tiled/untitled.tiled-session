@@ -36,11 +36,11 @@
             "scaleInEditor": 1
         },
         "map.json": {
-            "scale": 4,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 893.375,
-                "y": 1975.25
+                "x": 1029,
+                "y": 1562.6666666666665
             }
         },
         "map.json#background": {
