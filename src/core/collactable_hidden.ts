@@ -17,7 +17,7 @@ export default class CollactableHidden extends Phaser.Physics.Arcade.Sprite {
     );
     scene.add.existing(this);
     scene.physics.add.existing(this);
-
+    //
     if (!this.anims.exists("idle")) {
       this.anims.create({
         key: "idle",
