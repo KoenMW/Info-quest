@@ -53,7 +53,6 @@ const setKeyBoard = (player: Player) => {
 
 const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
   if (!local) {
-    console.log(import.meta.env.VITE_TURN_SERVER_KEY);
     await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
     const key = generateKey();
     setQRCode(key);
