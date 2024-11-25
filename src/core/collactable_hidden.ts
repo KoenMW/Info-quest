@@ -21,8 +21,8 @@ export default class CollactableHidden extends Phaser.Physics.Arcade.Sprite {
       this.anims.create({
         key: "idle",
         frames: [
-          { key: "collectable", frame: 0 },
-          { key: "collectable", frame: 1 },
+          { key: "collactable_hidden", frame: 0 },
+          { key: "collactable_hidden", frame: 1 },
         ],
         frameRate: 5,
         repeat: -1,
