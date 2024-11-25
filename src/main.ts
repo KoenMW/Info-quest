@@ -33,7 +33,7 @@ const routes: Routes = {
 const init = async () => {
   setLocal(!!getParam("local"));
   setRoutes(routes);
-  await router(true, true);
+  await router(true, false);
 
   const langParam = getParam("lang");
   if (langParam && (langParam === "en" || langParam === "nl")) {
