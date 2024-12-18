@@ -121,5 +121,5 @@ const ecCounter = document.querySelector<HTMLDivElement>(".ec-counter");
 export const setCollected = (ec: number) => {
   if (!ecCounter) return;
   ecCounter.innerText = ec.toString();
-  if (ec === 240) setModule("end-screen");
+  if (ec >= 240) setModule("end-screen");
 };
