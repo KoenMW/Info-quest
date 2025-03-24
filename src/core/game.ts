@@ -3,6 +3,7 @@ import tilemapJson from "../assets/tiled/map.json";
 import Player from "./player";
 import Remote from "./remote";
 import {
+  clearData,
   playGameTimer,
   setModule,
   setQRCode,
@@ -56,6 +57,7 @@ const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
     await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
     const key = generateKey();
     setQRCode(key);
+    let started = false;
 
     Remote.create(
       key,
@@ -65,11 +67,12 @@ const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
           setRestart();
         } else {
           setModule();
-          playGameTimer();
           scene.resume();
         }
       },
       (input) => {
+        if (!started) playGameTimer();
+        started = true;
         player.setMovement(input);
       }
     );
@@ -84,11 +87,13 @@ class Game extends Scene {
   private tileset: Phaser.Tilemaps.Tileset | null = null;
   private backgroundTileset: Phaser.Tilemaps.Tileset | null = null;
   private groundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
+  private doorLayer: Phaser.Tilemaps.TilemapLayer | null = null;
 
   private player!: Player;
 
   constructor() {
     super("game");
+    document.addEventListener("keydown", () => clearData());
   }
 
   preload() {
@@ -144,6 +149,8 @@ class Game extends Scene {
     this.map.createLayer("midground", this.tileset, 0, 0);
 
     this.groundLayer = this.map.createLayer("ground", this.tileset, 0, 0);
+
+    this.doorLayer = this.map.createLayer("door", this.tileset, 0, 0);
   }
 
   private cameraInit() {

@@ -37,10 +37,10 @@
         },
         "map.json": {
             "scale": 1.5,
-            "selectedLayer": 1,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 1029,
-                "y": 1562.6666666666665
+                "x": 1158.6666666666665,
+                "y": 1623
             }
         },
         "map.json#background": {

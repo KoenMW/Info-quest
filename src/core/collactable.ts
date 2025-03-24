@@ -32,7 +32,13 @@ export default class Collactable extends Phaser.Physics.Arcade.Sprite {
     this.anims.play("idle", true);
 
     scene.setPlayerCollision(this, () => {
-      setData(data[Collactable.collected]);
+      setData(
+        data[
+          Collactable.collected >= data.length
+            ? data.length - 1
+            : Collactable.collected
+        ]
+      );
       Collactable.collected++;
       setCollected(Collactable.collected * 30);
       this.destroy();

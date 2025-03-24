@@ -67,7 +67,7 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         this.right = false;
         break;
       case "jump":
-        this.jump = true;
+        if (this.body && this.body.blocked.down) this.jump = true;
         break;
       case "jump_release":
         this.jump = false;
@@ -103,9 +103,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
     if (this.left) {
-      this.setVelocityX(-100);
+      this.setVelocityX(-150);
     } else if (this.right) {
-      this.setVelocityX(100);
+      this.setVelocityX(150);
     } else {
       this.setVelocityX(0);
     }

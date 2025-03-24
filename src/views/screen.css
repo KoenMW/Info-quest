@@ -17,7 +17,7 @@
   height: 2.5ch;
   background: rgb(0, 0, 0);
   z-index: 1;
-  animation: disappear 10000ms forwards;
+  animation: disappear 10s forwards ease-in-out;
 }
 
 .play.removed::before {
@@ -54,13 +54,16 @@
   background: transparent;
   z-index: 2;
   opacity: 0;
-  animation: appear 10000ms forwards;
+  animation: appear 10s forwards ease-in-out;
 }
 
 header {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(#ffffff, hsla(0, 0%, 100%, 0.822), transparent);
 }
 
 .start-content {

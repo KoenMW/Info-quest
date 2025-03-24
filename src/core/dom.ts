@@ -72,7 +72,7 @@ export const setData = (data: Data) => {
   if (!text || !ec || !clearDataSpan) return;
   allowClearData = false;
   text.innerText = data[lang];
-  ec.innerText = data.ec.toString();
+  ec.innerText = "30";
   setModule("data");
   viewingData = true;
 
@@ -121,5 +121,5 @@ const ecCounter = document.querySelector<HTMLDivElement>(".ec-counter");
 export const setCollected = (ec: number) => {
   if (!ecCounter) return;
   ecCounter.innerText = ec.toString();
-  if (ec >= 240) setModule("end-screen");
+  if (ec >= 240) setTimeout(() => setModule("end-screen"), 10000);
 };

@@ -14,7 +14,7 @@ export const setLang = (newLang: Lang) => {
 
 export const bounds = {
   width: 512,
-  height: 256,
+  height: 288,
   tileSize: 18,
   mapSize: 120,
 };
