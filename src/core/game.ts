@@ -87,7 +87,6 @@ class Game extends Scene {
   private tileset: Phaser.Tilemaps.Tileset | null = null;
   private backgroundTileset: Phaser.Tilemaps.Tileset | null = null;
   private groundLayer: Phaser.Tilemaps.TilemapLayer | null = null;
-  private doorLayer: Phaser.Tilemaps.TilemapLayer | null = null;
 
   private player!: Player;
 
@@ -150,7 +149,7 @@ class Game extends Scene {
 
     this.groundLayer = this.map.createLayer("ground", this.tileset, 0, 0);
 
-    this.doorLayer = this.map.createLayer("door", this.tileset, 0, 0);
+    this.map.createLayer("door", this.tileset, 0, 0);
   }
 
   private cameraInit() {

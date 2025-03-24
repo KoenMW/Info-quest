@@ -11,6 +11,7 @@ export type Data = {
   nameEN: string;
   en: string;
   nl: string;
+  ec: number;
 };
 
 export type Lang = "en" | "nl";

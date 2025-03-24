@@ -72,7 +72,7 @@ export const setData = (data: Data) => {
   if (!text || !ec || !clearDataSpan) return;
   allowClearData = false;
   text.innerText = data[lang];
-  ec.innerText = "30";
+  ec.innerText = `${data.ec}`;
   setModule("data");
   viewingData = true;
 
