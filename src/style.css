@@ -81,6 +81,10 @@ button:hover {
   background-color: var(--main);
   color: var(--white);
   padding: 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #ffffff;
+  overflow: hidden;
 }
 
 .module {

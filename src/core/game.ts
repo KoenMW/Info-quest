@@ -53,7 +53,10 @@ const setKeyBoard = (player: Player) => {
 };
 
 const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
-  if (!local) {
+  if (local) {
+    setStartScreen();
+    setKeyBoard(player);
+  } else {
     await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
     const key = generateKey();
     setQRCode(key);
@@ -76,9 +79,6 @@ const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
         player.setMovement(input);
       }
     );
-  } else {
-    setStartScreen();
-    setKeyBoard(player);
   }
 };
 
@@ -156,7 +156,9 @@ class Game extends Scene {
     const camera = this.cameras.main;
 
     camera.setBounds(0, 0, this.map.widthInPixels, this.map.heightInPixels);
-    camera.startFollow(this.player, true, 0.7, 0.7);
+    camera.roundPixels = true;
+    camera.startFollow(this.player, true, 1, 1);
+    camera.setDeadzone(100, 50);
   }
 
   private collisionInit() {
@@ -179,9 +181,9 @@ class Game extends Scene {
 
     await setInput(this.scene, this.player);
 
-    data.forEach((_value, index) => {
-      new Collactable(this, dataLocations[index]);
-    });
+    for (let i = 0; i < data.length; i++) {
+      new Collactable(this, dataLocations[i]);
+    }
 
     new CollactableHidden(this);
 
