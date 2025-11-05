@@ -6,10 +6,11 @@
 .controller {
   width: 100dvw;
   height: 100dvh;
+  overflow: hidden;
 }
 
 .direction {
   color: var(--white);
-  font-size: 10em;
-  width: 33%;
+  border-radius: 0;
+  font-size: 4rem;
 }
