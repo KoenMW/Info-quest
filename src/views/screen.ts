@@ -4,6 +4,8 @@ import "./screen.css";
 import { bounds } from "../core/const";
 
 const screen = document.querySelector<HTMLElement>(".screen") as HTMLElement;
+
+// these are the settings for the Phaser game, you can change them to your liking
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.WEBGL,
   parent: screen,
@@ -27,6 +29,7 @@ const config: Phaser.Types.Core.GameConfig = {
   },
 };
 
+// Here we create a new Phaser game with the above configuration and export it as the default export of this module
 const main = () => {
   new Phaser.Game(config);
 };

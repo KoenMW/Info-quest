@@ -77,7 +77,7 @@ const setInput = async (scene: Phaser.Scenes.ScenePlugin, player: Player) => {
         if (!started) playGameTimer();
         started = true;
         player.setMovement(input);
-      }
+      },
     );
   }
 };
@@ -139,7 +139,7 @@ class Game extends Scene {
     this.tileset = this.map.addTilesetImage("base", "tiles");
     this.backgroundTileset = this.map.addTilesetImage(
       "background",
-      "background"
+      "background",
     );
 
     if (!this.tileset || !this.backgroundTileset) return;
@@ -170,7 +170,7 @@ class Game extends Scene {
 
   public setPlayerCollision(
     sprite: Phaser.Physics.Arcade.Sprite,
-    callback: () => void
+    callback: () => void,
   ) {
     this.physics.add.collider(this.player, sprite, callback);
   }

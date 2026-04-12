@@ -11,7 +11,7 @@ abstract class Remote {
   static create(
     id: string,
     onConnectionEvent: (event: "close" | "open") => void,
-    onInputEvent: (input: Inputs) => void
+    onInputEvent: (input: Inputs) => void,
   ) {
     this.remote = new TRINNRemote(id);
 

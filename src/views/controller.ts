@@ -5,6 +5,10 @@ import { mobileCheck } from "../core/utils";
 import { setModule } from "../core/dom";
 import "./controller.css";
 
+/*
+  This is the controller view, it is responsible for sending the input to the screen view. It uses the TRINN library to send the input to the screen view.
+*/
+
 const leftButton = document.querySelector<HTMLButtonElement>(".left");
 const rightButton = document.querySelector<HTMLButtonElement>(".right");
 const jumpButton = document.querySelector<HTMLButtonElement>(".jump");
@@ -15,7 +19,7 @@ console.log(isMobile ? "Mobile" : "Desktop");
 
 const setMoveButton = (
   button: HTMLButtonElement | null,
-  direction: "left" | "right"
+  direction: "left" | "right",
 ) => {
   if (!button) {
     console.error(`${direction} button not found`);
@@ -80,6 +84,7 @@ const setLanguegeSelect = () => {
   });
 };
 
+// This is the main function of the controller view, it sets up the TRINN library and the event listeners for the buttons
 const controllerView = async () => {
   await setupTRINN(import.meta.env.VITE_TURN_SERVER_KEY);
   const key = getParam("key");
